@@ -1,4 +1,4 @@
-function [ output ] = SIConv(x,type1,type2,type3,type4)
+function [ output ] = SIConv(A,unit1,unit2,unit3,unit4)
 % Converts to SI units
 % Checks the type of unit and converts to SI unit
 
@@ -7,23 +7,23 @@ function [ output ] = SIConv(x,type1,type2,type3,type4)
 %-------------------------------
 switch nargin
 	case 5
-		val = SIConv(x,type4);
-		val = SIConv(val,type3);
-		val = SIConv(val,type2);
+		val = SIConv(A,unit4);
+		val = SIConv(val,unit3);
+		val = SIConv(val,unit2);
 	case 4
-		val = SIConv(x,type3);
-		val = SIConv(val,type2);
+		val = SIConv(A,unit3);
+		val = SIConv(val,unit2);
 	case 3
-		val = SIConv(x,type2);
+		val = SIConv(A,unit2);
 	case 2
-		val = x;
+		val = A;
 end
 
 
 %-------------------------------
 % Changes prefix to base
 %-------------------------------
-switch type1
+switch unit1
 	case 'giga';
 		output = val*(10^9);
 	case 'mega';
