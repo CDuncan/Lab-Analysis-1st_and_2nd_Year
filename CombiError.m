@@ -1,5 +1,5 @@
 function [ output ] = CombiError(A,eA,B,eB,type)
-%Combines percentage errors to give a pc error
+%Takes errors from two variables to give combined error of new variable
 
 switch nargin
 	case 3
