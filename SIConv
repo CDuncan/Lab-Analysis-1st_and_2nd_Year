@@ -1,5 +1,5 @@
 function [ output ] = SIConv(A,unit1,unit2,unit3,unit4)
-% Converts to SI units
+% Converts units of given value to SI
 % Checks the type of unit and converts to SI unit
 
 %-------------------------------
