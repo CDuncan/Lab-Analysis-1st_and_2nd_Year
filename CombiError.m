@@ -10,8 +10,8 @@ switch type
 	case {'*' '/'}
 		eA_pc	= eA./A;
 		eB_pc	= eB./B;
-		int		= ( eA_pc.^2 + eB_pc.^2 ).^0.5;
-		output	= (a.*b).*int;
+		C		= ( eA_pc.^2 + eB_pc.^2 ).^0.5;
+		output	= (A.*B).*C;
 	case {'+' '-'}
 		output	= (eA.^2 + eB.^2).^0.5;
 end
