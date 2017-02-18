@@ -7,12 +7,12 @@ function [ output ] = SIConv(A,unit1,unit2,unit3,unit4)
 %-------------------------------
 switch nargin
 	case 5
-		val = SIConv(A,unit4);
-		val = SIConv(val,unit3);
-		val = SIConv(val,unit2);
+		B 	= SIConv(A,unit4);
+		C	= SIConv(B,unit3);
+		val = SIConv(C,unit2);
 	case 4
-		val = SIConv(A,unit3);
-		val = SIConv(val,unit2);
+		B 	= SIConv(A,unit3);
+		val = SIConv(B,unit2);
 	case 3
 		val = SIConv(A,unit2);
 	case 2
