@@ -3,6 +3,6 @@ function [ output ] = WMean(A,eA)
 
 B	= eA.^2;	% Square Error
 C	= sum(A./B);	% Sum of Value Over Square Error
-D	= sum(1./B);	% Sum Inverse Square Errors
+D	= sum(1./B);	% Sum of Inverse Square Errors
 output	= C./D;
 end
