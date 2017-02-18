@@ -1,8 +1,8 @@
 function [ output ] = eWMean(eA)
 %Error for a weigted mean
 
-B	= 1./(eA.^2);
-C	= sum(B);
-D 	= 1./C;
+B	= eA.^2;	% Square Error
+C	= sum(1./B);	% Sum of Inverse Square Error
+D 	= 1./C;		% Inverse Sum of Inverse Square Errors
 output	= D.^0.5;
 end
