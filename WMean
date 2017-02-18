@@ -1,4 +1,8 @@
 function [ output ] = WMean(A,eA)
 %Uses weighted mean formula for a variable and its errors
-output = sum(A./(eA.^2))./sum(1./(eA.^2));
+
+B	= eA.^2;	% Square Error
+C	= sum(A./B);	% Sum of Value Over Square Error
+D	= sum(1./B);	% Sum Inverse Square Errors
+output	= C./D;
 end
