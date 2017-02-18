@@ -1,4 +1,8 @@
 function [ output ] = eWMean(eA)
 %Error for a weigted mean
-output = (1./(sum(1./(eA.^2)))).^0.5;
+
+B		= 1./(eA.^2);
+C		= sum(B);
+D 		= 1./C;
+output	= D.^0.5;
 end
