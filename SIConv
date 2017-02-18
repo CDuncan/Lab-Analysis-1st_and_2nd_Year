@@ -24,40 +24,40 @@ end
 % Changes prefix to base
 %-------------------------------
 switch unit1
-	case 'giga';
+	case 'giga'
 		output	= val*(10^9);
-	case 'mega';
+	case 'mega'
 		output	= val*(10^9);
-	case 'kilo';
+	case 'kilo'
 		output	= val*(10^3);
-	case 'hecto';
+	case 'hecto'
 		output	= val*(10^2);
-	case 'centi';
+	case 'centi'
 		output	= val*(10^-2);
-	case 'milli';
+	case 'milli'
 		output	= val*(10^-3);
-	case 'micro';
+	case 'micro'
 		output	= val*(10^-6);
-	case 'nano';
+	case 'nano'
 		output	= val*(10^-9);
         
 %-------------------------------
 % Non SI units to SI units
 %-------------------------------
-	case 'celcius';
+	case 'celcius'
 		output	= val+(273.15);
-	case 'litre';
+	case 'litre'
 		output	= val*(10^-3);
 	case 'atmos'
 		output	= val*(101325);
-	case 'eVolt';
+	case 'eVolt'
 		output	= val*(1.602*10^-19);
-	case 'minute';
+	case 'minute'
 		output	= val*(60);
-	case 'hour';
+	case 'hour'
 		output	= val*(60^2);
-	case '/minute';
+	case '/minute'
 		output	= val*(60^-1);
-	case '/hour';
+	case '/hour'
 		output	= val*(60^-2);
 end
