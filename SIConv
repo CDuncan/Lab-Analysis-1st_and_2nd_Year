@@ -25,39 +25,39 @@ end
 %-------------------------------
 switch unit1
 	case 'giga';
-		output = val*(10^9);
+		output	= val*(10^9);
 	case 'mega';
-		output = val*(10^9);
+		output	= val*(10^9);
 	case 'kilo';
-		output = val*(10^3);
+		output	= val*(10^3);
 	case 'hecto';
-		output = val*(10^2);
+		output	= val*(10^2);
 	case 'centi';
-		output = val*(10^-2);
+		output	= val*(10^-2);
 	case 'milli';
-		output = val*(10^-3);
+		output	= val*(10^-3);
 	case 'micro';
-		output = val*(10^-6);
+		output	= val*(10^-6);
 	case 'nano';
-		output = val*(10^-9);
+		output	= val*(10^-9);
         
 %-------------------------------
 % Non SI units to SI units
 %-------------------------------
 	case 'celcius';
-		output = val+(273.15);
+		output	= val+(273.15);
 	case 'litre';
-		output = val*(10^-3);
+		output	= val*(10^-3);
 	case 'atmos'
-		output = val*(101325);
+		output	= val*(101325);
 	case 'eVolt';
-		output = val*(1.602*10^-19);
+		output	= val*(1.602*10^-19);
 	case 'minute';
-		output = val*(60);
+		output	= val*(60);
 	case 'hour';
-		output = val*(60^2);
+		output	= val*(60^2);
 	case '/minute';
-		output = val*(60^-1);
+		output	= val*(60^-1);
 	case '/hour';
-		output = val*(60^-2);
+		output	= val*(60^-2);
 end
