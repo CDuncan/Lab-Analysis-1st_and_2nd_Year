@@ -18,7 +18,7 @@ OldImage_Pos_rec	= Data_1(2).Reading + OffsetScreen;
 OldImage_Pos		= SIConv(OldImage_Pos_rec,'milli');
 %Combo
 CombiLens_Pos		= [OldLens_Pos;NewLens_Pos];
-CombiLens_Pos_fit	= [CombiLens_Pos, CombiLens_Pos, CombiLens_Pos, CombiLens_Pos, CombiLens_Pos, CombiLens_Pos, CombiLens_Pos];
+CombiLens_Pos_fit	=  repmat(CombiLens_Pos,1,7);
 CombiImage_Pos		= [OldImage_Pos;NewImage_Pos];
 CombiImage_Disp		= CombiImage_Pos - CombiLens_Pos_fit;
 CombiImage_Disp_m	= mean(CombiImage_Disp,2);
