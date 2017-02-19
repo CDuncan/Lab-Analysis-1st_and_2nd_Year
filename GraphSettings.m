@@ -15,7 +15,7 @@ ax.XLabel.String = 'X Label'
 ax.XLabel.FontSize = 11
 ax.XLabel.FontWeight = 'bold'
 %~ax.XTick = A:B:C;
-%~ax.XLim = [D E];
+%~ax.XLim = [floor(min(X)) ceil(max(X))];
 
 
 % Y-Axis
@@ -27,4 +27,4 @@ ax.YLabel.String = 'Y Label'
 ax.XLabel.FontSize = 11
 ax.YLabel.FontWeight = 'bold'
 %~ax.YTick = A:B:C;
-%~ax.YLim = [D E];
+%~ax.YLim = [floor(min(Y)) ceil(max(Y))];
