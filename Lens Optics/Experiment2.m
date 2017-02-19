@@ -7,7 +7,7 @@ load Data_2.mat;
 % Data Input
 % Range = D
 Range_rec		= Data_2(1).Reading + OffsetScreen;
-Range			= SIConv(Range_rec,'milli').';
+Range			= SIConv(Range_rec,'milli');
 Range_fit		= repmat(Range,1,5);
 
 % Lens_Pos = u
