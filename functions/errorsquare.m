@@ -1,4 +1,6 @@
 function errorsquare(X,eX,Y,eY)
+% For errors in both x and y a rectangle is drawn containing the region of possible values given one SD 
+
 ax = gca;
 hold;
 for A = 1:length(X)
