@@ -7,7 +7,7 @@ load Data_3.mat;
 
 % Data Set Combination
 %Set 3
-NewLens_Pos_rec		= Data_3(1).Reading.' - OffsetLens;
+NewLens_Pos_rec		= Data_3(1).Reading - OffsetLens;
 NewLens_Pos		= SIConv(NewLens_Pos_rec,'milli');
 NewImage_Pos_rec	= Data_3(2).Reading + OffsetScreen;
 NewImage_Pos		= SIConv(NewImage_Pos_rec,'milli');
