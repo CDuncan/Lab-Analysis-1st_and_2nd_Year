@@ -113,5 +113,5 @@ end
 if ~(sum(Mod)-6==0)  
     fprintf('\nCycles = %.0f   Factor = %.2f \n\n', i , 1.001.^i)
 end
-fprintf('L = %.1f±%.0f kJ/kg  %.1f SDs \n', L(1,1) , L(1,2), (L(1,1)-200)./L(1,2))
+fprintf('L = %.1fÂ±%.0f kJ/kg  %.1f SDs \n', L(1,1) , L(1,2), (L(1,1)-200)./L(1,2))
 fprintf('Chisq %f < %f < %f \n',1-(8/(numel(I)-2)).^0.5, (Table{1,6})./(numel(I)-2) ,1+(8/(numel(I)-2)).^0.5)
