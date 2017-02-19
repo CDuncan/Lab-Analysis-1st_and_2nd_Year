@@ -7,34 +7,32 @@ load Data_3.mat;
 
 % Data Input
 NewLens_Pos_rec		= Data_3(1).Reading - OffsetLens;
-NewLens_Pos		= SIConv(NewLens_Pos_rec,'milli');
 NewImage_Pos_rec	= Data_3(2).Reading + OffsetScreen;
-NewImage_Pos		= SIConv(NewImage_Pos_rec,'milli');
-
-% Data Reuse
 OldLens_Pos_rec		= Data_1(1).Reading - OffsetLens;
-OldLens_Pos		= SIConv(OldLens_Pos_rec,'milli');
 OldImage_Pos_rec	= Data_1(2).Reading + OffsetScreen;
-OldImage_Pos		= SIConv(OldImage_Pos_rec,'milli');
 
-CombiLens_Pos		= [OldLens_Pos;NewLens_Pos];
-CombiImage_Pos		= [OldImage_Pos;NewImage_Pos];
+%Combo
+CombiLens_Pos_rec	= [OldLens_Pos_rec;NewLens_Pos_rec];
+CombiLens_Pos		= SIConv(CombiLens_Pos_rec,'milli');
+CombiLens_Pos_fit	= repmat(CombiLens_Pos,1,7);
+
+CombiImage_Pos_rec	= [OldImage_Pos_rec;NewImage_Pos_rec];
+CombiImage_Pos		= SIConv(CombiImage_Pos_rec,'milli');
 CombiImage_Pos_m	= mean(CombiImage_Pos,2);
+CombiImage_Disp		= CombiImage_Pos - CombiLens_Pos_fit;
+CombiImage_Disp_m	= mean(CombiImage_Disp,2);
 
-% Data Reuse*2 (cheeky)
-CombiLens_Posx		= [CombiLens_Pos;(CombiImage_Pos_m-CombiLens_Pos)];
-CombiImage_Pos_mx	= CombiImage_Pos_m;
-CombiLens_Pos		= [CombiLens_Posx];
-CombiImage_Pos_m	= [CombiImage_Pos_mx;CombiImage_Pos_mx];
+CombiLens_Pos		= [CombiLens_Pos;CombiImage_Disp_m];
+CombiImage_Pos		= [CombiImage_Pos_m;CombiImage_Pos_m];
 
-eLens_Pos		= SIConv(OffsetLens,'milli')*[CombiLens_Pos./CombiLens_Pos];
-eImage			= SIConv(OffsetScreen,'milli')*[CombiLens_Pos./CombiLens_Pos];
+eLens_Pos		= SIConv(OffsetLens,'milli');
+eLens_Pos_fit		= InpError(CombiLens_Pos,eLens_Pos,'abs');
+eImage_Pos		= SIConv(OffsetScreen,'milli');
+eImage_Pos_fit		= InpError(CombiImage_Pos,eImage_Pos,'abs');
 
 % Graph
 %SPECIAL PLOT
-%scatter(CombiLens_Pos,CombiImage_Pos_m)
-HVError2(CombiLens_Pos,eLens_Pos,CombiImage_Pos_m,eImage,1)
-
+errorsquare(CombiLens_Pos,eLens_Pos_fit,CombiImage_Pos,eImage_fit)
 
 % Graph Settings
 ax			= gca;

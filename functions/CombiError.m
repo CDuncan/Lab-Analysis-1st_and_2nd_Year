@@ -5,12 +5,15 @@ switch nargin
 	case 3
 		output = CombiError(0,A,0,eA,B);
 	otherwise
+		eA_pc	= eA./A;
+		eB_pc	= eB./B;
 		switch type
-			case {'*' '/'}
-				eA_pc	= eA./A;
-				eB_pc	= eB./B;
+			case '*'
 				C       = ( eA_pc.^2 + eB_pc.^2 ).^0.5;
 				output	= (A.*B).*C;
+			case '/'
+				C       = ( eA_pc.^2 + eB_pc.^2 ).^0.5;
+				output	= (A./B).*C;
 			case {'+' '-'}
 				output	= (eA.^2 + eB.^2).^0.5;
 			end
