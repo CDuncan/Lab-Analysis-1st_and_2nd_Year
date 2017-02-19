@@ -36,7 +36,7 @@ eImage_Disp		= SIConv(eOffScreen_rec,'milli');
 einvImage_Disp		= CombiError(1,0,Image_Disp,eImage_Disp,'/');
 
 % Graph
-HVError2(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage,1)
+errorsquare(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage)
 
 
 % Graph Settings
