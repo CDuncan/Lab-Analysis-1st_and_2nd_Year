@@ -1,4 +1,4 @@
-# DataAnalysis
+# Data Analysis
 
 Matlab Data Analysis Functions for Lab
 
