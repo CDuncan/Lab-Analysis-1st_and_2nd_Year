@@ -43,9 +43,7 @@ ax.TickLength		= [0.01 0.035];
 ax.XGrid		= 'on';
 ax.XMinorGrid		= 'on';
 ax.XMinorTick		= 'on';
-ax.XLim			= [0.1 0.5];
 %
 ax.YGrid		= 'on';
 ax.YMinorGrid		= 'on';
 ax.YMinorTick		= 'on';
-ax.YLim			= [floor(min(CombiLens_Pos)) ceil(max(CombiLens_Pos))];
