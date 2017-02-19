@@ -28,10 +28,8 @@ eImage_fit		= InpError(Image_Disp,eImage,'abs');
 eObjectSize		= SIConv(0.5,'milli');
 eMagnif			= CombiError(ImageSize_m,eImage_fit,ObjectSize,eObjectSize,'/')
 
-
 % Graph
-HVError2(Image_Disp,eImage_fit,Magnification,eMagnif,1)
-
+errorsquare(Image_Disp,eImage_fit,Magnification,eMagnif);
 
 % Graph Settings
 ax			= gca;
