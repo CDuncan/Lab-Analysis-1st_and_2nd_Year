@@ -24,9 +24,9 @@ Magnification		= -ImageSize_m/ObjectSize;
 
 % Error
 eImage			= SIConv(eOffScreen_rec,'milli');
-eImage_fit		= [Image_Disp./Image_Disp].*eImage;
-eImageSize		= SIConv(0.5,'milli');
-eMagnif			= (eImageSize./ObjectSize).*(Image_Disp./Image_Disp);
+eImage_fit		= InpError(Image_Disp,eImage,'abs');
+eObjectSize		= SIConv(0.5,'milli');
+eMagnif			= CombiError(ImageSize_m,eImage_fit,ObjectSize,eObjectSize,'/')
 
 
 % Graph
