@@ -5,7 +5,7 @@ DataCorrection;
 load Data_4.mat;
 
 % Data Input
-Lens_Pos_rec		= Data_4(1).Reading.' - OffsetLens;
+Lens_Pos_rec		= Data_4(1).Reading - OffsetLens;
 Lens_Pos		= SIConv(Lens_Pos_rec,'milli');
 Lens_Pos_fit		= [Lens_Pos,Lens_Pos,Lens_Pos,Lens_Pos,Lens_Pos];
 
