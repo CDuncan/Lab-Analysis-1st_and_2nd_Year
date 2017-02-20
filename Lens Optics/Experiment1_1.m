@@ -2,7 +2,8 @@ DataCorrection;
 load Data_1.mat;
 load Data_3.mat;
 
-% Data Set Combination
+% Data Input
+%-----------------------    
 %Set 3
 NewLens_Pos_rec		= Data_3(1).Reading - OffsetLens;
 NewImage_Pos_rec	= Data_3(2).Reading + OffsetScreen;
@@ -17,7 +18,6 @@ CombiImage_Pos_rec	= [OldImage_Pos_rec;NewImage_Pos_rec];
 CombiImage_Pos		= SIConv(CombiImage_Pos_rec,'milli');
 CombiImage_Disp		= CombiImage_Pos - CombiLens_Pos_fit;
 CombiImage_Disp_m	= mean(CombiImage_Disp,2);
-
 % Data Reuse
 Image_Dispx		= CombiImage_Disp_m;
 Lens_Posx		= CombiLens_Pos;
@@ -28,6 +28,7 @@ invLens_Pos		= 1./Lens_Pos;
 
 
 % Error
+%-----------------------    
 eLens_Pos		= SIConv(eOffLens_Cave_rec,'milli');
 einvLens_Pos		= CombiError(1,0,Lens_Pos,eLens_Pos,'/');
 eImage_Disp		= SIConv(eOffScreen_rec,'milli');
@@ -35,6 +36,7 @@ einvImage_Disp		= CombiError(1,0,Image_Disp,eImage_Disp,'/');
 
 
 % Graph
+%-----------------------    
 errorsquare(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage_Disp,10);
 % Settings
 ax		= gca;
