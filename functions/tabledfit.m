@@ -3,10 +3,11 @@ function tabledfit(X,eX,Y,eY)
 
 TabCh		= TabledChi(X,eX,Y,eY);
 f		= fittype('a*x+b');
-A		= TabCh.m(1);
-B		= TabCh.c(1);
-TabledFit	= cfit(f,A,B);
-plot(TabledFit);
-String		= sprintf('%.4fx + %.4f',A,B);
+a		= TabCh.m(1);
+b		= TabCh.c(1);
+TabledFit	= cfit(f,a,b);
+FittedLine	= plot(TabledFit);
+String		= sprintf('%.4fx + %.4f',a,b);
+legend([FittedLine], String);
 disp(String)
 end
