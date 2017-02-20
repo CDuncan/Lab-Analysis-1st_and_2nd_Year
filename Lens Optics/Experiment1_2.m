@@ -29,7 +29,7 @@ eObjectSize		= SIConv(0.5,'milli');
 eMagnif			= CombiError(ImageSize_m,eImage_fit,ObjectSize,eObjectSize,'/')
 
 % Graph
-errorsquare(Image_Disp,eImage_fit,Magnification,eMagnif);
+errorsquare(Image_Disp,eImage_fit,Magnification,eMagnif,'default');
 
 % Graph Settings
 ax			= gca;
@@ -49,3 +49,6 @@ ax.YMinorGrid		= 'on';
 ax.YMinorTick		= 'on';
 ax.YTick		= -2.5:0.25:-1;
 ax.YLim			= [-2.5 -1];
+
+% Fit
+tabledfit(Image_Disp,eImage_fit,Magnification,eMagnif);
