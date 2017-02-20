@@ -32,7 +32,7 @@ eImage_Pos_fit		= InpError(CombiImage_Pos,eImage_Pos,'abs');
 
 % Graph
 %SPECIAL PLOT
-errorsquare(CombiLens_Pos,eLens_Pos_fit,CombiImage_Pos,eImage_Pos_fit);
+errorsquare(CombiLens_Pos,eLens_Pos_fit,CombiImage_Pos,eImage_Pos_fit,'default');
 
 
 % Graph Settings
