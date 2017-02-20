@@ -37,9 +37,6 @@ einvImage_Disp		= CombiError(1,0,Image_Disp,eImage_Disp,'/');
 
 % Graph
 errorsquare(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage_Disp,10);
-tabledfit(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage_Disp);
-
-
 
 % Graph Settings
 ax		= gca;
@@ -57,3 +54,6 @@ ax.YGrid	= 'on';
 ax.YMinorGrid	= 'on';
 ax.YTick	= 0:1:100;
 ax.YMinorTick	= 'on';
+
+% Fit
+tabledfit(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage_Disp);
