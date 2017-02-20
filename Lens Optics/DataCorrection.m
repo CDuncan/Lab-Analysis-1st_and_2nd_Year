@@ -20,7 +20,7 @@ eVernier_rec        = 0.01;
 eRuler_rec          = 0.5;
 ePos_rec            = 0.5;
 
-eOffLens_Cave_rec   = ( 3.5*(eVernier_rec.^2) + ePos_rec.^2).^0.5;
+eOffLens_Cave_rec   = (3*eVernier_rec^2 + (0.5*eVernier_rec)^2 + ePos_rec^2)^0.5;
 eOffScreen_rec      = CombiError(eRuler_rec,ePos_rec,'+')
 
 clearvars -except OffsetLens OffsetConc OffsetScreen eOffLens_Cave_rec eOffScreen_rec;
