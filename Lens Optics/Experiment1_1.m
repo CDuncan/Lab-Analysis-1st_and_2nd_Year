@@ -45,7 +45,6 @@ ax.XGrid	= 'on';
 ax.XMinorGrid	= 'on';
 ax.XTick	= 0:1:100;
 ax.XMinorTick	= 'on';
-
 %
 ax.YGrid	= 'on';
 ax.YMinorGrid	= 'on';
