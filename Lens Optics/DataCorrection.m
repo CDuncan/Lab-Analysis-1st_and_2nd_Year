@@ -7,11 +7,11 @@ LensHolderBrim      = 4.01;
 ORing               = 3.49;
 LensWidthMid        = 10.63;
 LensWidthBot        = 3.23;
-OffsetLens          = LensHolderWidth - LensHolderBrim - ORing - LensWidthBot./2;
+OffsetLens          = LensHolderWidth - LensHolderBrim - ORing - LensWidthBot/2;
 %Right Rail to Concave
 ConcWidthMid        = 4.51;
 ConcWidthBot        = 12.63;
-OffsetConc          = LensHolderWidth - LensHolderBrim - ORing - ConcWidthMid./2;
+OffsetConc          = LensHolderWidth - LensHolderBrim - ORing - ConcWidthMid/2;
 %Left Rail to Screen
 OffsetScreen        = 19;
 
