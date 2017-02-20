@@ -26,16 +26,17 @@ Lens_Pos		= [Lens_Posx;Image_Dispx];
 invImage_Disp		= 1./Image_Disp;
 invLens_Pos		= 1./Lens_Pos;
 
+
 % Error
 eLens_Pos		= SIConv(eOffLens_Cave_rec,'milli');
 einvLens_Pos		= CombiError(1,0,Lens_Pos,eLens_Pos,'/');
 eImage_Disp		= SIConv(eOffScreen_rec,'milli');
 einvImage_Disp		= CombiError(1,0,Image_Disp,eImage_Disp,'/');
 
+
 % Graph
 errorsquare(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage_Disp,10);
-
-% Graph Settings
+% Settings
 ax		= gca;
 ax.Box		= 'off';
 ax.TickDir	= 'out';
@@ -50,6 +51,5 @@ ax.YGrid	= 'on';
 ax.YMinorGrid	= 'on';
 ax.YTick	= 0:1:100;
 ax.YMinorTick	= 'on';
-
 % Fit
 tabledfit(invLens_Pos,einvLens_Pos,invImage_Disp,einvImage_Disp);
