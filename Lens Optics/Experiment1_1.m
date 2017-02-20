@@ -1,6 +1,3 @@
-%-----------------------
-% Exp 1, Graph 1
-%----------------------- 
 DataCorrection;
 load Data_1.mat;
 load Data_3.mat;
