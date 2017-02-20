@@ -9,7 +9,7 @@ for A = 1:length(X)
     patch(pX,pY,'or','FaceAlpha',0.3);
 end
 switch Size
-	case []
+	case 'default'
 		scatter(X,Y,'b.');
 	otherwise
 		scatter(X,Y,Size,'b.');
