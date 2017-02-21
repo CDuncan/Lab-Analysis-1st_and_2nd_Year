@@ -19,5 +19,5 @@ switch Flag
 	case 0
 		output = Fsq.^0.5;
 	case 1
-		disp('Invalid input');
+		disp('Needs 2 to 5 inputs');
 end
