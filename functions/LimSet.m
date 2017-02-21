@@ -1,11 +1,5 @@
-function LimSet(X,intervalX,Y,intervalY)
+function [XLim,YLim] = LimSet(X,intervalX,Y,intervalY)
 % Sets bounds
-
-switch nargin
-	case 4
-		[YMin,YMax] = LimSet(Y,intervalY);
-end
-
 % Min
 XMin		= min(X);
 XMinRound	= floor(XMin);
@@ -26,6 +20,12 @@ end
 XMax		= XTest+intervalX;
 
 
-ax.XLim = [XMin,XMax];
-ax.YLim = [YMin,YMax];
+switch nargin
+	case 4
+		[YLim,Place] = LimSet(Y,intervalY);
+    case 2
+        YLim = [0,0];
+end
+
+XLim = [XMin,XMax];
 end
