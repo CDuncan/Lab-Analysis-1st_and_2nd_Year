@@ -12,5 +12,4 @@ switch nargin
 	case 2
 		Fsq	= A.^2 + B.^2;
 end
-
 output = Fsq.^0.5;
