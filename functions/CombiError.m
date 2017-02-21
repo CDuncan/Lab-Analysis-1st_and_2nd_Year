@@ -9,7 +9,7 @@ switch nargin
 		eB_pc	= eB./B;
 		switch type
 			case '*'
-				C       = Quadrature(eA_pc, eB_pc);;
+				C       = Quadrature(eA_pc, eB_pc);
 				output	= (A.*B).*C;
 			case '/'
 				C       = Quadrature(eA_pc, eB_pc);
