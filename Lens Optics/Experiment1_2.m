@@ -29,25 +29,10 @@ eMagnif			= CombiError(ImageSize_m,eImage_fit,ObjectSize,eObjectSize,'/');
 
 
 % Graph
-%-----------------------    
+%-----------------------
+GraphSettings(Image_Disp,0.1,Magnification,0.25);
 errorsquare(Image_Disp,eImage_fit,Magnification,eMagnif,'default');
-% Settings
-ax			= gca;
-ax.Box			= 'off';
-ax.TickDir		= 'out';
-ax.TickLength		= [0.01 0.035];
-%
-ax.XGrid		= 'on';
-ax.XMinorGrid		= 'on';
-ax.XMinorTick		= 'on';
-ax.XTick		= 0.2:0.025:0.35;
-ax.XLim			= [0.2 0.35];
-ax.XAxisLocation	= 'top';
-%
-ax.YGrid		= 'on';
-ax.YMinorGrid		= 'on';
-ax.YMinorTick		= 'on';
-ax.YTick		= -2.5:0.25:-1;
-ax.YLim			= [-2.5 -1];
-% Fit
 tabledfit(Image_Disp,eImage_fit,Magnification,eMagnif);
+ax = gca;
+ax.YLim = [ax.YLim(1), -1];
+ax.XAxisLocation 	= 'top';
