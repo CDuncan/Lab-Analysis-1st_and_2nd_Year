@@ -11,9 +11,9 @@ ax.XGrid		= 'on';
 ax.XAxisLocation 	= 'bottom';
 ax.XMinorGrid		= 'on';
 ax.XMinorTick		= 'on';
-ax.XLabel.String	= 'X Label'
-ax.XLabel.FontSize	= 11
-ax.XLabel.FontWeight	= 'bold'
+ax.XLabel.String	= 'X Label';
+ax.XLabel.FontSize	= 11;
+ax.XLabel.FontWeight	= 'bold';
 %~ax.XTick = A:B:C;
 
 % Y-Axis
@@ -21,8 +21,8 @@ ax.YGrid		= 'on';
 ax.YAxisLocation	= 'origin';
 ax.YMinorGrid		= 'on';
 ax.YMinorTick		= 'on';
-ax.YLabel.String	= 'Y Label'
-ax.XLabel.FontSize	= 11
-ax.YLabel.FontWeight	= 'bold'
+ax.YLabel.String	= 'Y Label';
+ax.XLabel.FontSize	= 11;
+ax.YLabel.FontWeight	= 'bold';
 %~ax.YTick = A:B:C;
 [ax.XLim,ax.YLim]   	= LimSet(X,intervalX,Y,intervalY);
