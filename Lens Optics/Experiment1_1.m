@@ -2,28 +2,29 @@ DataCorrection;
 load Data_1.mat;
 load Data_3.mat;
 
-% Data Input
+% Data Input (Readings from Experiment 1 and 3 are compatible)
 %-----------------------    
-%Set 3
-NewLens_Pos_rec		= Data_3(1).Reading - OffsetLens;
-NewImage_Pos_rec	= Data_3(2).Reading + OffsetScreen;
-%Set 1
+% Object Distance (Distance from light to lens 'u')
+NewLens_Pos_rec		= Data_3(1).Reading - OffsetLens; 		% Accouting offset of lens from recorded position
 OldLens_Pos_rec		= Data_1(1).Reading - OffsetLens;
-OldImage_Pos_rec	= Data_1(2).Reading + OffsetScreen;
-%Combo
-CombiLens_Pos_rec	= [OldLens_Pos_rec;NewLens_Pos_rec];
+CombiLens_Pos_rec	= [OldLens_Pos_rec;NewLens_Pos_rec];  		% Combing data sets
 CombiLens_Pos		= SIConv(CombiLens_Pos_rec,'milli');
-CombiLens_Pos_fit	= repmat(CombiLens_Pos,1,7);
-CombiImage_Pos_rec	= [OldImage_Pos_rec;NewImage_Pos_rec];
-CombiImage_Pos		= SIConv(CombiImage_Pos_rec,'milli');
-CombiImage_Disp		= CombiImage_Pos - CombiLens_Pos_fit;
-CombiImage_Disp_m	= mean(CombiImage_Disp,2);
-% Data Reuse
-Image_Dispx		= CombiImage_Disp_m;
-Lens_Posx		= CombiLens_Pos;
-Image_Disp		= [Image_Dispx;Lens_Posx];
-Lens_Pos		= [Lens_Posx;Image_Dispx];
-invImage_Disp		= 1./Image_Disp;
+CombiLens_Pos_fit	= repmat(CombiLens_Pos,1,7);			% Duplicating data along matrix to allow later operations
+ObjectDistance		= CombiLens_Pos_fit;				% Renaming to clarify for later use
+
+% Image Distance (Distance from lens to screen 'v')
+NewScreen_Pos_rec	= Data_3(2).Reading + OffsetScreen;		% Accouting offset of screen from recorded position
+OldScreen_Pos_rec	= Data_1(2).Reading + OffsetScreen;
+CombiScreen_Pos_rec	= [OldScreen_Pos_rec;NewScreen_Pos_rec];	% Combing data sets
+CombiScreen_Pos		= SIConv(CombiScreen_Pos_rec,'milli');
+CombiScreen_Disp	= CombiScreen_Pos - CombiLens_Pos_fit;		% Changing from position along rail to displacement from lens
+CombiScreen_Disp_m	= mean(CombiScreen_Disp,2);			% Taking mean of repeat readings
+ImageDistance		= CombiScreen_Disp_m;				% Renaming to clarify for later use
+
+% Data Reuse from reversability of Light
+ObjectDistance		= [CombiLens_Pos_fit;CombiScreen_Disp_m];	% Adding opposite reading to end of data
+ImageDistance		= [CombiScreen_Disp_m;CombiLens_Pos_fit];
+invImage_Disp		= 1./Image_Disp;				% Relationship is between inverse values
 invLens_Pos		= 1./Lens_Pos;
 
 
