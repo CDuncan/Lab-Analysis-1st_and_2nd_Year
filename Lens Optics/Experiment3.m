@@ -31,21 +31,5 @@ eImage_Pos		= SIConv(OffsetScreen,'milli');
 eImage_Pos_fit		= InpError(CombiImage_Pos,eImage_Pos,'abs');
 
 % Graph
+GraphSettings(CombiLens_Pos,0.1,CombiImage_Pos,0.25);
 errorsquare(CombiLens_Pos,eLens_Pos_fit,CombiImage_Pos,eImage_Pos_fit,'default');
-
-
-% Graph Settings
-ax			= gca;
-ax.Box			= 'off';
-ax.TickDir		= 'out';
-ax.TickLength		= [0.01 0.035];
-%
-ax.XGrid		= 'on';
-ax.XMinorGrid		= 'on';
-ax.XMinorTick		= 'on';
-%
-ax.YGrid		= 'on';
-ax.YMinorGrid		= 'on';
-ax.YMinorTick		= 'on';
-
-[ax.XLim,ax.YLim]   = LimSet(CombiLens_Pos,0.1,CombiImage_Pos,0.25);
