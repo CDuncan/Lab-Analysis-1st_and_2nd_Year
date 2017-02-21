@@ -56,9 +56,7 @@ ax.YMinorGrid	= 'on';
 ax.YTick	= 0:1:100;
 ax.YMinorTick	= 'on';
 %
-[XLim,YLim] = LimSet(invObjectDistance,0.5,invImageDistance,0.5);
-ax.XLim = XLim;
-ax.YLim = YLim;
+[ax.XLim,ax.YLim] = LimSet(invObjectDistance,0.5,invImageDistance,0.5);
 
 
 % Fit
