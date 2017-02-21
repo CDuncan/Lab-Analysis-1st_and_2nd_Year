@@ -15,10 +15,6 @@ ax.XLabel.String	= 'X Label'
 ax.XLabel.FontSize	= 11
 ax.XLabel.FontWeight	= 'bold'
 %~ax.XTick = A:B:C;
-Xlow  = max([2*min(X)-max(X),floor(min(X))]);
-Xhigh = min([2*max(X)-min(X),ciel(max(X))]);
-ax.XLim = [Xlow Xhigh];
-
 
 % Y-Axis
 ax.YGrid		= 'on';
@@ -29,6 +25,4 @@ ax.YLabel.String	= 'Y Label'
 ax.XLabel.FontSize	= 11
 ax.YLabel.FontWeight	= 'bold'
 %~ax.YTick = A:B:C;
-Ylow  = max([2*min(Y)-max(Y),floor(min(Y))]);
-Yhigh = min([2*max(Y)-min(Y),ciel(max(Y))]);
-ax.YLim = [Ylow Yhigh];
+[ax.XLim,ax.YLim]   	= LimSet(X,intervalX,Y,intervalY);
