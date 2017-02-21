@@ -1,5 +1,5 @@
+function GraphSettings(X,intervalX,Y,intervalY)
 % Graph Settings
-
 % General
 ax			= gca;
 ax.Box			= 'off';
@@ -26,4 +26,3 @@ ax.XLabel.FontSize	= 11;
 ax.YLabel.FontWeight	= 'bold';
 %~ax.YTick = A:B:C;
 [ax.XLim,ax.YLim]   	= LimSet(X,intervalX,Y,intervalY);
-clearvars X Y intervalX intervalY
