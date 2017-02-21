@@ -49,10 +49,17 @@ ax.XGrid	= 'on';
 ax.XMinorGrid	= 'on';
 ax.XTick	= 0:1:100;
 ax.XMinorTick	= 'on';
+
 %
 ax.YGrid	= 'on';
 ax.YMinorGrid	= 'on';
 ax.YTick	= 0:1:100;
 ax.YMinorTick	= 'on';
+%
+[XLim,YLim] = LimSet(invObjectDistance,0.5,invImageDistance,0.5);
+ax.XLim = XLim;
+ax.YLim = YLim;
+
+
 % Fit
 tabledfit(invObjectDistance,einvObjectDistance,invImageDistance,einvImageDistance);
