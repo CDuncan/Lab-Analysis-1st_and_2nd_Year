@@ -1,5 +1,6 @@
 function [ output ] = Quadrature(A,B,C,D,E)
 %Combines values in quadrature F^2 = A^2 + B^2 + C^2 + D^2 + E^2
+narginchk(2,5)
 
 switch nargin
 	case 5
