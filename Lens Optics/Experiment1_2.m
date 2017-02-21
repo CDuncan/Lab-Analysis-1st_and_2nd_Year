@@ -30,7 +30,7 @@ eMagnif			= CombiError(ImageSize_m,eImage_fit,ObjectSize,eObjectSize,'/');
 
 % Graph
 %-----------------------
-GraphSettings(Image_Disp,0.1,Magnification,0.25);
+GraphSettings(Image_Disp,0.1,Magnification,0.5);
 errorsquare(Image_Disp,eImage_fit,Magnification,eMagnif,'default');
 tabledfit(Image_Disp,eImage_fit,Magnification,eMagnif);
 ax = gca;
