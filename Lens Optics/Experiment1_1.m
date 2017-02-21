@@ -37,27 +37,7 @@ einvImageDistance	= CombiError(1,0,ImageDistance,eImageDistance,'/');
 
 
 % Graph
-%-------------------------------------------------------------   
+%-------------------------------------------------------------
+GraphSettings(invObjectDistance,0.5,invImageDistance,0.5);
 errorsquare(invObjectDistance,einvObjectDistance,invImageDistance,einvImageDistance,10);
-% Settings
-ax		= gca;
-ax.Box		= 'off';
-ax.TickDir	= 'out';
-ax.TickLength	= [0.01 0.035];
-%
-ax.XGrid	= 'on';
-ax.XMinorGrid	= 'on';
-ax.XTick	= 0:1:100;
-ax.XMinorTick	= 'on';
-
-%
-ax.YGrid	= 'on';
-ax.YMinorGrid	= 'on';
-ax.YTick	= 0:1:100;
-ax.YMinorTick	= 'on';
-%
-[ax.XLim,ax.YLim] = LimSet(invObjectDistance,0.5,invImageDistance,0.5);
-
-
-% Fit
 tabledfit(invObjectDistance,einvObjectDistance,invImageDistance,einvImageDistance);
