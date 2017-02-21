@@ -31,7 +31,6 @@ eImage_Pos		= SIConv(OffsetScreen,'milli');
 eImage_Pos_fit		= InpError(CombiImage_Pos,eImage_Pos,'abs');
 
 % Graph
-%SPECIAL PLOT
 errorsquare(CombiLens_Pos,eLens_Pos_fit,CombiImage_Pos,eImage_Pos_fit,'default');
 
 
@@ -48,3 +47,7 @@ ax.XMinorTick		= 'on';
 ax.YGrid		= 'on';
 ax.YMinorGrid		= 'on';
 ax.YMinorTick		= 'on';
+
+[XLim,YLim] = LimSet(CombiLens_Pos,0.1,CombiImage_Pos,0.25);
+ax.XLim = XLim;
+ax.YLim = YLim;
