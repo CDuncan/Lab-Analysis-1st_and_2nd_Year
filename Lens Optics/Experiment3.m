@@ -48,6 +48,4 @@ ax.YGrid		= 'on';
 ax.YMinorGrid		= 'on';
 ax.YMinorTick		= 'on';
 
-[XLim,YLim] = LimSet(CombiLens_Pos,0.1,CombiImage_Pos,0.25);
-ax.XLim = XLim;
-ax.YLim = YLim;
+[ax.XLim,ax.YLim] = LimSet(CombiLens_Pos,0.1,CombiImage_Pos,0.25);
