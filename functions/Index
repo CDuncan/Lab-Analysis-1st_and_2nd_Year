@@ -1,0 +1,5 @@
+function [ Export ] = Index(Name,Structure,Row)
+%Searches a structure
+Data = Structure;
+Export = Data(find(strcmp({Data.Name}, Name)==1));
+end
