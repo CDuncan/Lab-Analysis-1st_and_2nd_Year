@@ -32,7 +32,7 @@ eMagnif			= CombiError(ImageSize_m,eImage_fit,ObjectSize,eObjectSize,'/');
 %-----------------------
 GraphSettings(Image_Disp,0.1,Magnification,0.5);
 errorsquare(Image_Disp,eImage_fit,Magnification,eMagnif,'default');
-tabledfit(Image_Disp,eImage_fit,Magnification,eMagnif);
+LinDataFit(Image_Disp,eImage_fit,Magnification,eMagnif);
 ax = gca;
 ax.YLim = [ax.YLim(1), -1];
 ax.XAxisLocation 	= 'top';
