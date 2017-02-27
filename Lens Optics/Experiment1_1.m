@@ -40,4 +40,4 @@ einvImageDistance	= CombiError(1,0,ImageDistance,eImageDistance,'/');
 %-------------------------------------------------------------
 GraphSettings(invObjectDistance,0.5,invImageDistance,0.5);
 errorsquare(invObjectDistance,einvObjectDistance,invImageDistance,einvImageDistance,10);
-tabledfit(invObjectDistance,einvObjectDistance,invImageDistance,einvImageDistance);
+LinDataFit(invObjectDistance,einvObjectDistance,invImageDistance,einvImageDistance);
