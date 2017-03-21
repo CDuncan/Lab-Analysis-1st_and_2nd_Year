@@ -1,5 +1,5 @@
 %RecordedVals
-% Format XX°YY.Y?
+% Format XXÂ°YY.Y?
 
 % Central line
 %~~~~~~~~~~~~~~~~~~
