@@ -6,7 +6,7 @@ function [ eF ] = EPropagate(Function)
 Vars = symvar(Function);
 
     %% Adding Errors to Syms
-    for i = 1:length(Vars)
+	for i = 1:length(Vars)
         evalin('base',['syms e' char(Vars(i))])
     end     
     
