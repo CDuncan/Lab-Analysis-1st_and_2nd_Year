@@ -10,7 +10,7 @@ I hope this allows me to improve my coding skills UwU
 
 
 
-Stuff I should probably integrate into my code
+Stuff I should probably integrate into my code:
 
 | Command | Description |
 | --- | --- |
