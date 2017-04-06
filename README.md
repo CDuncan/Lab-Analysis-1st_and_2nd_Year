@@ -15,4 +15,3 @@ Stuff I should probably integrate into my code:
 | Command | Description |
 | --- | --- |
 | linspace(start,end) | 100 equally spaced values |
-| --- | --- |
