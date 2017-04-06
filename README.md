@@ -8,9 +8,10 @@ I hope this allows me to improve my coding skills UwU
 
 
 Stuff I should probably integrate into my code
+
 | Command | Description |
 | --- | --- |
-| linspace(start,end)  | 100 equally spaced values |
+| linspace(start,end) | 100 equally spaced values |
 | aa | aa |
 
 | Command | Description |
